@@ -375,3 +375,55 @@ html, body {
     gap: 20px !important;
   }
 }
+
+
+/* 1) Делает hero-картинку адаптивной,
+      даже если у неё нет класса и она где-то глубоко внутри */
+      header img,
+      header picture img,
+      img[alt*="watch" i],
+      img[src*="watch" i] {
+        display: block;
+        max-width: min(48vw, 560px); /* на десктопе справа чуть крупнее */
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        position: static !important;
+        transform: none !important;
+        right: auto !important;
+        left: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        margin: 0  clamp(1rem, 3vw, 2rem) 0 auto; /* прижимаем вправо с небольшим отступом */
+        justify-self: end;   /* если родитель — grid */
+        align-self: start;   /* верхняя кромка у верха */
+      }
+      
+      /* 2) Сетка hero (не меняем твою разметку): текст | картинка.
+            Если внутри header есть единственный контейнер — этого хватит. */
+      header > div {
+        display: grid;
+        grid-template-columns: 1fr min(52vw, 580px); /* даём больше места картинке */
+        align-items: start;
+        column-gap: clamp(16px, 4vw, 32px);
+        padding-left: clamp(4rem, 10vw, 10rem); /* текст правее */
+        padding-right: clamp(1rem, 4vw, 3rem);
+      }
+      
+      /* 3) Телефоны — складываем в одну колонку и сильно ужимаем картинку */
+      @media (max-width: 768px) {
+        header > div { 
+          grid-template-columns: 1fr !important;
+          padding-left: 1.25rem !important;
+          padding-right: 1.25rem !important;
+          row-gap: 1rem;
+        }
+        header img,
+        header picture img,
+        img[alt*="watch" i],
+        img[src*="watch" i] {
+          max-width: 80vw !important;
+          margin: 8px auto 0 !important;   /* по центру */
+          justify-self: center !important;
+        }
+      }
