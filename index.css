@@ -173,21 +173,23 @@ body {
 }
 
 
-/* === HERO СЕКЦИЯ === */
 
-/* серый фон на всю ширину */
+
+
+
+/* fix */
+
 header {
   background: #f8f8f8;
-  padding-top: 0; /* убираем верхний отступ полностью */
-  padding-bottom: clamp(40px, 8vw, 100px); /* нижний оставляем */
+  padding-top: 0; 
+  padding-bottom: clamp(40px, 8vw, 100px);
 }
-/* чтобы контент не прилипал к краям экрана */
+
 header > div {
   width: min(100% - 2rem, 1200px);
   margin-inline: auto;
 }
 
-/* делаем сетку: текст + картинка */
 header > div {
   display: grid;
   grid-template-columns: 1fr min(45vw, 520px);
@@ -195,7 +197,6 @@ header > div {
   gap: clamp(20px, 4vw, 40px);
 }
 
-/* левая часть — текст */
 header h1 {
   font-size: clamp(36px, 6vw, 96px);
   line-height: 1.05;
@@ -207,7 +208,6 @@ header p {
   max-width: 58ch;
 }
 
-/* правая часть — картинка */
 header img {
   max-width: min(45vw, 520px);
   height: auto;
@@ -215,7 +215,6 @@ header img {
   display: block;
 }
 
-/* кнопка и цена */
 header .buy, header .cta, header .actions {
   display: inline-flex;
   align-items: center;
@@ -239,7 +238,6 @@ header .buy span, header .cta span, header .actions span {
   white-space: nowrap;
 }
 
-/* адаптив */
 @media (max-width: 900px) {
   header > div {
     grid-template-columns: 1fr;
@@ -251,7 +249,6 @@ header .buy span, header .cta span, header .actions span {
   }
 }
 
-/* === POPULAR MODELS === */
 section {
   width: min(100% - 2rem, 1200px);
   margin-inline: auto;
@@ -267,7 +264,6 @@ section h2 {
   margin-bottom: 32px;
 }
 
-/* сетка моделей */
 .models, .cards, .popular, .catalog {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -275,22 +271,18 @@ section h2 {
   justify-items: center;
 }
 
-/* выравниваем текстовый блок в hero */
 header > div {
-  /* добавляем горизонтальные отступы */
   padding-inline: clamp(1rem, 6vw, 6rem);
 }
 
-/* выравнивание текста внутри первой колонки */
 header h1,
 header p,
 header .buy,
 header .cta,
 header .actions {
-  justify-self: start; /* текст и кнопки выравниваем слева */
+  justify-self: start;
 }
 
-/* картинка справа прижимается к краю, но с небольшим отступом */
 header img {
   justify-self: end;
   margin-right: clamp(1rem, 4vw, 3rem);
@@ -302,25 +294,21 @@ html, body {
 }
 
 
-/* Только для широких экранов — правим композицию hero */
 @media (min-width: 901px) {
-  /* 1) Сетка hero: верх по сетке + чуть больше места под картинку,
-        и двигаем текст правее увеличив левый внутренний отступ */
   header > div {
-    grid-template-columns: 1fr min(52vw, 580px) !important;  /* было ~45vw */
-    align-items: start !important;                           /* верх прижат */
-    padding-left: clamp(5rem, 11vw, 12rem) !important;       /* текст правее */
+    grid-template-columns: 1fr min(52vw, 580px) !important; 
+    align-items: start !important;                          
+    padding-left: clamp(5rem, 11vw, 12rem) !important;     
     padding-right: clamp(1rem, 4vw, 3rem) !important;
   }
 
-  /* 2) Картинка: слегка увеличиваем. Верх остаётся на месте, низ опускается */
   header > div > img {
-    width: min(52vw, 580px) !important;  /* больше, чем раньше */
+    width: min(52vw, 580px) !important; 
     max-width: none !important;
     height: auto !important;
     justify-self: end !important;
-    align-self: start !important;         /* якорим к верху */
+    align-self: start !important;     
     margin: 0 !important;
-    transform: none !important;           /* без сдвигов */
+    transform: none !important;       
   }
 }
