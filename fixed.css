@@ -173,6 +173,7 @@ main {
   .header-img {
     width: 300px;
     margin-top: -60px;
+    margin-left: 20px;
   }
 
   .buy-link,
