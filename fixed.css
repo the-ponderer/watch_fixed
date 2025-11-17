@@ -187,8 +187,9 @@ main {
 /* 3) телефоны — складываем в колонку, без горизонтального скролла */
 @media (max-width: 640px) {
   .header-container {
-    grid-template-columns: 1fr;
-    padding: 32px 20px 56px;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    padding: 24px 16px 40px;
+    column-gap: 24px;
     row-gap: 24px;
   }
 
@@ -198,7 +199,7 @@ main {
   }
 
   .header-img {
-    width: 260px;
+    width: 220px;
     margin-top: 0;
     margin-left: 20px;
   }
