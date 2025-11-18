@@ -27,29 +27,22 @@ img {
   display: block;
 }
 
-
-/* ===== BASE ===== */
-
 body {
   font-family: 'League Spartan', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: #161515;
   background-color: #ffffff;
 }
 
-/* чтобы контент ниже hero был по центру, как прежде */
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 24px 80px;
 }
 
-/* ===== HERO (как на GitHub, но без сломанной адаптивности) ===== */
-
 .header {
   background-color: #f8f8f8;
 }
 
-/* очень близко к исходным отступам и ширине 1440 */
 .header-container {
   max-width: 1440px;
   margin: 0 auto;
@@ -59,8 +52,6 @@ main {
   column-gap: 60px;
   align-items: center;
 }
-
-/* левая колонка — текст */
 
 .header-container > div:first-child {
   align-self: flex-start;
@@ -114,8 +105,6 @@ main {
   text-align: center;
 }
 
-/* правая колонка — часы */
-
 .header-img-wrapper {
   justify-self: end;
   align-self: flex-start;
@@ -125,12 +114,9 @@ main {
   display: block;
   width: 422px;
   max-width: 100%;
-  margin-top: -145px; /* как в исходнике, чтобы ремешок упирался в верх */
+  margin-top: -145px;
 }
-
 /* ===== АДАПТИВ ===== */
-
-/* 1) чуть поджимаем на нормальных ноутбуках */
 @media (max-width: 1200px) {
   .header-container {
     padding: 72px 60px 96px;
@@ -154,7 +140,6 @@ main {
   }
 }
 
-/* 2) планшеты — уменьшаем шрифты и картинку, оставляем 2 колонки */
 @media (max-width: 900px) {
   .header-container {
     padding: 48px 32px 72px;
@@ -184,7 +169,6 @@ main {
   }
 }
 
-/* 3) телефоны — складываем в колонку, без горизонтального скролла */
 @media (max-width: 640px) {
   .header-container {
     grid-template-columns: 1fr;
@@ -193,7 +177,7 @@ main {
   }
 
   .header-img-wrapper {
-    order: -1;           /* часы сверху; хочешь, можно убрать эту строку */
+    order: -1;
     justify-self: center;
   }
 
@@ -224,10 +208,7 @@ main {
     width: auto;
   }
 }
-
 /* ===== POPULAR / MODELS ===== */
-
-/* заголовки секции */
 .popular-title {
   text-align: center;
   font-size: 24px;
@@ -245,7 +226,6 @@ main {
   margin-bottom: 84px;
 }
 
-/* карточка часов */
 .item-wrapper {
   margin: 0 auto 85px;
   max-width: 417px;
@@ -276,7 +256,6 @@ main {
   font-weight: 300;
 }
 
-/* блок с финальным описанием продукта */
 .product-description-wrapper {
   margin: 100px auto 85px;
   max-width: 417px;
@@ -300,8 +279,6 @@ main {
 .product-description-link {
   color: rgba(239, 11, 178, 0.25);
 }
-
-/* ===== адаптив для секции Popular ===== */
 
 @media (max-width: 900px) {
   .models {
